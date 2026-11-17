@@ -1,0 +1,47 @@
+Eventos: 9 | aceptados: 5 | totales: 4
+
+== Oraculo: totales ==
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'total': 170000}
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:02:00+00:00', 'window_end': '2026-07-24T13:03:00+00:00', 'total': 200000}
+{'merchant_id': 'm-verde', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'total': 80000}
+{'merchant_id': 'm-verde', 'window_start': '2026-07-24T13:01:00+00:00', 'window_end': '2026-07-24T13:02:00+00:00', 'total': 90000}
+
+== Oraculo: auditoria (orden de llegada) ==
+{'event_id': 'p-001', 'merchant_id': 'm-azul', 'delay_seconds': 1.0, 'duplicate': False, 'too_late': False, 'accepted': True, 'revision': False, 'reason': 'accepted'}
+{'event_id': 'p-002', 'merchant_id': 'm-verde', 'delay_seconds': 2.0, 'duplicate': False, 'too_late': False, 'accepted': True, 'revision': False, 'reason': 'accepted'}
+{'event_id': 'p-003', 'merchant_id': 'm-azul', 'delay_seconds': 2.0, 'duplicate': False, 'too_late': False, 'accepted': False, 'revision': False, 'reason': 'not_confirmed'}
+{'event_id': 'p-004', 'merchant_id': 'm-azul', 'delay_seconds': 53.0, 'duplicate': False, 'too_late': False, 'accepted': True, 'revision': True, 'reason': 'accepted'}
+{'event_id': 'p-002', 'merchant_id': 'm-verde', 'delay_seconds': 83.0, 'duplicate': True, 'too_late': False, 'accepted': False, 'revision': False, 'reason': 'duplicate'}
+{'event_id': 'p-005', 'merchant_id': 'm-verde', 'delay_seconds': 2.0, 'duplicate': False, 'too_late': False, 'accepted': True, 'revision': False, 'reason': 'accepted'}
+{'event_id': 'p-006', 'merchant_id': 'm-azul', 'delay_seconds': 1.0, 'duplicate': False, 'too_late': False, 'accepted': True, 'revision': False, 'reason': 'accepted'}
+{'event_id': 'p-008', 'merchant_id': 'm-azul', 'delay_seconds': 3.0, 'duplicate': False, 'too_late': False, 'accepted': False, 'revision': False, 'reason': 'not_confirmed'}
+{'event_id': 'p-007', 'merchant_id': 'm-verde', 'delay_seconds': 169.0, 'duplicate': False, 'too_late': True, 'accepted': False, 'revision': False, 'reason': 'too_late'}
+
+== Beam batch: totales ==
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'total': 170000}
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:02:00+00:00', 'window_end': '2026-07-24T13:03:00+00:00', 'total': 200000}
+{'merchant_id': 'm-verde', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'total': 110000}
+{'merchant_id': 'm-verde', 'window_start': '2026-07-24T13:01:00+00:00', 'window_end': '2026-07-24T13:02:00+00:00', 'total': 90000}
+
+== Beam streaming (TestStream), lateness=120s: panes ==
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'pane_timing': 'ON_TIME', 'pane_index': 0, 'total': 120000}
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'pane_timing': 'LATE', 'pane_index': 1, 'total': 170000}
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:02:00+00:00', 'window_end': '2026-07-24T13:03:00+00:00', 'pane_timing': 'ON_TIME', 'pane_index': 0, 'total': 200000}
+{'merchant_id': 'm-verde', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'pane_timing': 'ON_TIME', 'pane_index': 0, 'total': 80000}
+{'merchant_id': 'm-verde', 'window_start': '2026-07-24T13:01:00+00:00', 'window_end': '2026-07-24T13:02:00+00:00', 'pane_timing': 'ON_TIME', 'pane_index': 0, 'total': 90000}
+
+== Beam streaming (TestStream), lateness=180s: panes ==
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'pane_timing': 'ON_TIME', 'pane_index': 0, 'total': 120000}
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'pane_timing': 'LATE', 'pane_index': 1, 'total': 170000}
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:02:00+00:00', 'window_end': '2026-07-24T13:03:00+00:00', 'pane_timing': 'ON_TIME', 'pane_index': 0, 'total': 200000}
+{'merchant_id': 'm-verde', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'pane_timing': 'ON_TIME', 'pane_index': 0, 'total': 80000}
+{'merchant_id': 'm-verde', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'pane_timing': 'LATE', 'pane_index': 1, 'total': 110000}
+{'merchant_id': 'm-verde', 'window_start': '2026-07-24T13:01:00+00:00', 'window_end': '2026-07-24T13:02:00+00:00', 'pane_timing': 'ON_TIME', 'pane_index': 0, 'total': 90000}
+
+== Sink UPSERT, 2 intentos: materializado ==
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'total': 170000, 'idempotency_key': 'm-azul|2026-07-24T13:00:00+00:00'}
+{'merchant_id': 'm-azul', 'window_start': '2026-07-24T13:02:00+00:00', 'window_end': '2026-07-24T13:03:00+00:00', 'total': 200000, 'idempotency_key': 'm-azul|2026-07-24T13:02:00+00:00'}
+{'merchant_id': 'm-verde', 'window_start': '2026-07-24T13:00:00+00:00', 'window_end': '2026-07-24T13:01:00+00:00', 'total': 80000, 'idempotency_key': 'm-verde|2026-07-24T13:00:00+00:00'}
+{'merchant_id': 'm-verde', 'window_start': '2026-07-24T13:01:00+00:00', 'window_end': '2026-07-24T13:02:00+00:00', 'total': 90000, 'idempotency_key': 'm-verde|2026-07-24T13:01:00+00:00'}
+
+UPSERT: 8 intentos -> 4 filas | POST: 8 intentos -> 8 filas
