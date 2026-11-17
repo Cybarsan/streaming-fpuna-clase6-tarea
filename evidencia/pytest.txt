@@ -1,0 +1,37 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.2, pluggy-1.6.0 -- /home/claude/repo/streaming-fpuna-clase6-tarea/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/claude/repo/streaming-fpuna-clase6-tarea
+configfile: pyproject.toml
+plugins: anyio-4.14.2
+collecting ... collected 27 items
+
+tests/test_assignment.py::test_parse_utc_returns_timezone_aware_datetime PASSED [  3%]
+tests/test_assignment.py::test_assign_fixed_window_uses_event_time PASSED [  7%]
+tests/test_assignment.py::test_duplicate_does_not_change_total PASSED    [ 11%]
+tests/test_assignment.py::test_deduplication_is_isolated_by_merchant PASSED [ 14%]
+tests/test_assignment.py::test_stateful_dofn_keeps_keys_isolated PASSED  [ 18%]
+tests/test_assignment.py::test_out_of_order_event_uses_its_event_time_window PASSED [ 22%]
+tests/test_assignment.py::test_late_event_within_tolerance_is_a_revision PASSED [ 25%]
+tests/test_assignment.py::test_event_beyond_lateness_is_audited PASSED   [ 29%]
+tests/test_assignment.py::test_windowed_pipeline_produces_totals PASSED  [ 33%]
+tests/test_assignment.py::test_trigger_policy_has_lateness_and_accumulating_panes PASSED [ 37%]
+tests/test_assignment.py::test_retries_converge_to_one_materialized_entity PASSED [ 40%]
+tests/test_assignment.py::test_append_only_sink_materializes_every_attempt PASSED [ 44%]
+tests/test_assignment.py::test_timer_handler_clears_state PASSED         [ 48%]
+tests/test_streaming.py::test_parse_utc_rejects_invalid_values PASSED    [ 51%]
+tests/test_streaming.py::test_parse_utc_rejects_timestamps_without_utc_marker PASSED [ 55%]
+tests/test_streaming.py::test_window_boundary_belongs_to_next_window PASSED [ 59%]
+tests/test_streaming.py::test_default_run_counts_events_accepted_and_totals PASSED [ 62%]
+tests/test_streaming.py::test_audit_explains_every_decision PASSED       [ 66%]
+tests/test_streaming.py::test_without_deduplication_the_duplicate_inflates_the_total PASSED [ 70%]
+tests/test_streaming.py::test_batch_pipeline_filters_deduplicates_and_separates_windows PASSED [ 74%]
+tests/test_streaming.py::test_stateful_dofn_drops_repeated_id_within_a_key PASSED [ 77%]
+tests/test_streaming.py::test_stream_late_event_within_tolerance_revises_the_total PASSED [ 81%]
+tests/test_streaming.py::test_stream_event_beyond_allowed_lateness_is_dropped PASSED [ 85%]
+tests/test_streaming.py::test_stream_late_duplicate_does_not_produce_a_revision PASSED [ 88%]
+tests/test_streaming.py::test_stream_replay_of_dataset_converges_to_the_oracle PASSED [ 92%]
+tests/test_streaming.py::test_idempotency_key_ignores_total_so_revisions_overwrite PASSED [ 96%]
+tests/test_streaming.py::test_four_results_two_attempts PASSED           [100%]
+
+============================== 27 passed in 4.63s ==============================
